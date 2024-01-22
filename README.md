@@ -1,0 +1,1 @@
+# install-quary-cli-action
