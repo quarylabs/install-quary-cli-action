@@ -24,6 +24,6 @@ runs:
         echo "Installing Quary CLI version $VERSION"
         wget https://github.com/quarylabs/quary-cli/releases/download/$VERSION/quary-$VERSION-quary-linux-x86_64-gnu.zip -O quary-cli.zip
         unzip quary-cli.zip -d quary-cli
-        sudo mv "quary-cli/quary /usr/local/bin/quary"
+        sudo mv quary-cli/quary /usr/local/bin/quary
         quary --version
       shell: bash
