@@ -17,6 +17,6 @@ jobs:
       - name: Test Install Specific Version
         uses: ./
         with:
-          version: '0.0.81'
+          version: '0.0.95'
       - name: Verify Installation
         run: quary --version

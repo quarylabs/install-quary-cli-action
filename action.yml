@@ -14,7 +14,7 @@ runs:
     - run: |
         if [ "${{ inputs.version }}" = "latest" ]; then
           # Fetch the latest release tag from GitHub API without authentication
-          LATEST_VERSION=$(curl -s https://api.github.com/repos/quarylabs/quary-cli/releases/latest | grep 'tag_name' | cut -d '"' -f 4)
+          LATEST_VERSION=$(curl -s https://api.github.com/repos/quarylabs/quary/releases/latest | grep 'tag_name' | cut -d '"' -f 4)
           echo "Latest version is $LATEST_VERSION"
           VERSION=$LATEST_VERSION
         else
@@ -22,7 +22,7 @@ runs:
         fi
 
         echo "Installing Quary CLI version $VERSION"
-        wget https://github.com/quarylabs/quary-cli/releases/download/$VERSION/quary-$VERSION-quary-linux-x86_64-gnu.zip -O quary-cli.zip
+        wget https://github.com/quarylabs/quary/releases/download/$VERSION/quary-$VERSION-quary-linux-x86_64-gnu.zip -O quary-cli.zip
         unzip quary-cli.zip -d quary-cli
         sudo mv quary-cli/quary /usr/local/bin/quary
         quary --version
